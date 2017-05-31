@@ -1,0 +1,33 @@
+{
+  "name": "@blackbaud/skyux-builder-plugin-auth-email-whitelist",
+  "version": "0.0.1",
+  "description": "A SKY UX Builder plugin that only allows users with Blackbaud email addresses to access the SPA.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node ./scripts/prepare-package.js",
+    "coverage": "istanbul cover -x 'src/*.spec.js' --report=html jasmine JASMINE_CONFIG_PATH=jasmine.json",
+    "lint": "./node_modules/.bin/eslint src/**/*.js",
+    "test": "npm run lint && npm run coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blackbaud/skyux-builder-plugin-auth-email-whitelist.git"
+  },
+  "author": "Blackbaud, Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/blackbaud/skyux-builder-plugin-auth-email-whitelist/issues"
+  },
+  "homepage": "https://github.com/blackbaud/skyux-builder-plugin-auth-email-whitelist#readme",
+  "dependencies": {
+    "fs-extra": "3.0.0",
+    "jwt-decode": "2.2.0"
+  },
+  "devDependencies": {
+    "eslint": "3.19.0",
+    "eslint-plugin-standard": "3.0.1",
+    "istanbul": "0.4.5",
+    "jasmine": "2.6.0",
+    "mock-require": "2.0.2"
+  }
+}
