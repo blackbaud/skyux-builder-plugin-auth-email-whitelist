@@ -13,15 +13,7 @@ function createDist() {
     fs.mkdirSync(distPath);
   }
 
-  fs.copySync(path.join(rootPath, 'src', 'collector.js'), path.join(distPath, 'collector.js'));
-  fs.copySync(path.join(rootPath, 'src', 'generator.js'), path.join(distPath, 'generator.js'));
-  fs.writeFileSync(path.join(distPath, 'index.js'),
-`
-module.exports = {
-  collector: require('./collector'),
-  generator: require('./generator')
-};
-`);
+  fs.writeFileSync(path.join(distPath, 'index.js'), `module.exports = require('./auth-email-whitelist');`);
 }
 
 function makePackageFileForDist() {
@@ -33,6 +25,7 @@ function makePackageFileForDist() {
 }
 
 function copyFilesToDist() {
+  fs.copySync(path.join(rootPath, 'src', 'auth-email-whitelist.js'), path.join(distPath, 'auth-email-whitelist.js'));
   fs.copySync(path.join(rootPath, 'README.md'), path.join(distPath, 'README.md'));
   fs.copySync(path.join(rootPath, 'CHANGELOG.md'), path.join(distPath, 'CHANGELOG.md'));
 }
