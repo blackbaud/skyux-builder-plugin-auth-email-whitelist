@@ -6,6 +6,7 @@ import { BBAuth } from '@blackbaud/auth-client';
 import { SkyAppBootstrapper } from '@blackbaud/skyux-builder/runtime';
 import decode = require('jwt-decode');
 
+/* istanbul ignore next */
 (SkyAppBootstrapper as any).processBootstrapConfig = () => {
   return BBAuth
     .getToken()
