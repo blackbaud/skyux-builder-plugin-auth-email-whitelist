@@ -26,7 +26,8 @@ import decode = require('jwt-decode');
       }
 
       return Promise.reject(
-        'You must be a Blackbaud employee to access this content. Please log in with a valid Blackbaud email address.'
+        'You must be a Blackbaud employee to access this content. \
+        Please log in with a valid Blackbaud email address.'
       );
     });
 };
