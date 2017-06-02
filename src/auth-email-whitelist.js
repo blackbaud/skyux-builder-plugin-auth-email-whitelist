@@ -1,10 +1,12 @@
 const preload = (content, resourcePath) => {
   if (resourcePath.match(/app-extras\.module\.ts$/)) {
     return `${content}
+/* tslint:disable:max-line-length */
 import { BBAuth } from '@blackbaud/auth-client';
 import { SkyAppBootstrapper } from '@blackbaud/skyux-builder/runtime';
 import decode = require('jwt-decode');
 
+/* istanbul ignore next */
 (SkyAppBootstrapper as any).processBootstrapConfig = () => {
   return BBAuth
     .getToken()
@@ -30,6 +32,7 @@ import decode = require('jwt-decode');
       );
     });
 };
+/* tslint:enable:max-line-length */
 `;
   }
 
