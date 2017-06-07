@@ -1,7 +1,6 @@
 const preload = (content, resourcePath, skyAppConfig) => {
   let authEnabled = skyAppConfig.auth || false;
-  let prodMode = skyAppConfig.runtime.command === 'build';
-  if (resourcePath.match(/app-extras\.module\.ts$/) && authEnabled && prodMode) {
+  if (resourcePath.match(/app-extras\.module\.ts$/) && authEnabled) {
     return `${content}
 /* tslint:disable:max-line-length */
 import { BBAuth } from '@blackbaud/auth-client';
