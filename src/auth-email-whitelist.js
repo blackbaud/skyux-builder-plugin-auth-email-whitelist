@@ -1,6 +1,6 @@
 const preload = (content, resourcePath, skyAppConfig) => {
-  let authEnabled = config.auth || false;
-  let prodMode = config.runtime.command === 'build';
+  let authEnabled = skyAppConfig.auth || false;
+  let prodMode = skyAppConfig.runtime.command === 'build';
   if (resourcePath.match(/app-extras\.module\.ts$/) && authEnabled && prodMode) {
     return `${content}
 /* tslint:disable:max-line-length */
