@@ -1,5 +1,5 @@
 const preload = (content, resourcePath, skyAppConfig) => {
-  let authEnabled = (skyAppConfig.auth === 'true' || skyAppConfig.auth === true);
+  let authEnabled = (skyAppConfig.skyux.auth === 'true' || skyAppConfig.skyux.auth === true);
   if (resourcePath.match(/app-extras\.module\.ts$/) && authEnabled) {
     return `${content}
 /* tslint:disable:max-line-length */
