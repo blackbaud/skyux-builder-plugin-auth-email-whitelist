@@ -1,6 +1,6 @@
 {
   "name": "@blackbaud/skyux-builder-plugin-auth-email-whitelist",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A SKY UX Builder plugin that only allows users with Blackbaud email addresses to access the SPA.",
   "main": "index.js",
   "scripts": {
