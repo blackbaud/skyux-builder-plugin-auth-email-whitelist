@@ -30,14 +30,14 @@ describe('Auth Email Whitelist plugin', () => {
     let content = '<p></p>';
     let path = 'app-extras.module.ts';
     let skyAppConfig = {
-        skyxux:{
-          auth: true
+        skyux:{
+          auth: false
         }
     }
     let result = plugin.preload(content, path, skyAppConfig);
     expect(result).toBe(content);
 
-    skyAppConfig.auth = true;
+    skyAppConfig.skyux.auth = true;
     result = plugin.preload(content, path, skyAppConfig);
     expect(result).not.toBe(content);
   })
@@ -46,7 +46,7 @@ describe('Auth Email Whitelist plugin', () => {
     let content = '';
     let path = 'app-extras.module.ts';
     let skyAppConfig = {
-        skyxux:{
+        skyux:{
           auth: true
         }
     }
