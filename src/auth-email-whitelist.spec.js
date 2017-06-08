@@ -14,19 +14,37 @@ describe('Auth Email Whitelist plugin', () => {
   it('should only change the content of the app-extras.module.ts file', () => {
     let content = '<p></p>';
     let path = 'sample.service.ts';
-    let result = plugin.preload(content, path);
+    let skyAppConfig = {};
+    let result = plugin.preload(content, path, skyAppConfig);
     expect(result).toBe(content);
-
+    skyAppConfig.auth = true;
     content = '{}';
     path = 'app-extras.module.ts';
-    result = plugin.preload(content, path);
+    result = plugin.preload(content, path, skyAppConfig);
     expect(result).not.toBe(content);
   });
 
+  it('should only change the content of app-extras if auth is true', () => {
+    let content = '<p></p>';
+    let path = 'app-extras.module.ts';
+    let skyAppConfig = {
+      auth: false
+    };
+    let result = plugin.preload(content, path, skyAppConfig);
+    expect(result).toBe(content);
+
+    skyAppConfig.auth = true;
+    result = plugin.preload(content, path, skyAppConfig);
+    expect(result).not.toBe(content);
+  })
+
   it('should add content to the end of the app-extras.module.ts file', () => {
-    const content = '';
-    const path = 'app-extras.module.ts';
-    const result = plugin.preload(content, path);
+    let content = '';
+    let path = 'app-extras.module.ts';
+    let skyAppConfig = {
+      auth: true
+    }
+    let result = plugin.preload(content, path, skyAppConfig);
     expect(result).toContain('(SkyAppBootstrapper as any).processBootstrapConfig');
   });
 });
