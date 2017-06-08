@@ -1,3 +1,7 @@
+# 1.0.3 (2017-06-08)
+
+- Fixed bug with auth check.
+
 # 1.0.2 (2017-06-08)
 
 - Require `"auth": true` to activate email whitelist behavior.
