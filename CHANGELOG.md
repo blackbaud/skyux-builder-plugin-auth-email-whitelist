@@ -1,3 +1,7 @@
+# 1.0.2 (2017-06-08)
+
+- Require `"auth": true` to activate email whitelist behavior.
+
 # 1.0.1 (2017-06-02)
 
 - Ignore istanbul code coverage for appended code.
