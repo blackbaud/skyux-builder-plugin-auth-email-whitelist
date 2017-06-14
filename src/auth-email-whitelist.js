@@ -5,7 +5,7 @@ const preload = (content, resourcePath, skyAppConfig) => {
 /* tslint:disable:max-line-length */
 import { BBAuth } from '@blackbaud/auth-client';
 import { SkyAppBootstrapper } from '@blackbaud/skyux-builder/runtime';
-import decode = require('jwt-decode');
+const decode = require('jwt-decode');
 
 /* istanbul ignore next */
 (SkyAppBootstrapper as any).processBootstrapConfig = () => {
