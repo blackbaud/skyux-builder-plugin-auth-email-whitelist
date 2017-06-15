@@ -1,3 +1,9 @@
+# 1.0.4 (2017-06-15)
+
+- Fixed bug with importing `jwt-decode`.
+
+- Added a message to the page for unauthorized requests.
+
 # 1.0.3 (2017-06-08)
 
 - Fixed bug with auth check.
