@@ -2,7 +2,7 @@
 
 - Fixed bug with importing `jwt-decode`.
 
-- Added a display message for users to the window on failed login attempt instead of failing silently at an endless loading screen.
+- Added a message to the page for unauthorized requests.
 
 # 1.0.3 (2017-06-08)
 
