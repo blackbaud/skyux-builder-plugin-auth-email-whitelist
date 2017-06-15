@@ -4,7 +4,7 @@ const preload = (content, resourcePath, skyAppConfig) => {
     return `${content}
 /* tslint:disable:max-line-length */
 import { BBAuth } from '@blackbaud/auth-client';
-import { SkyAppBootstrapper } from '@blackbaud/skyux-builder/runtime';
+import { SkyAppBootstrapper, SkyAppWindowRef } from '@blackbaud/skyux-builder/runtime';
 const decode = require('jwt-decode');
 
 /* istanbul ignore next */
@@ -28,9 +28,13 @@ const decode = require('jwt-decode');
         return Promise.resolve(true);
       }
 
-      return Promise.reject(
-        'You must be a Blackbaud employee to access this content. Please log in with a valid Blackbaud email address.'
-      );
+      const windowRef = new SkyAppWindowRef();
+      const nativeWindow = (windowRef.nativeWindow as any);
+      const redirectUrl = nativeWindow.encodeURIComponent(nativeWindow.location.href);
+
+      document.write('<h1>Unauthorized</h1><p>You must be a Blackbaud employee to access this content. Please <a href="https://signin.blackbaud.com/signout?RedirectUrl=' + redirectUrl + '">sign in</a> with a valid Blackbaud email address.</p>');
+
+      return Promise.reject('Unauthorized');
     });
 };
 /* tslint:enable:max-line-length */
