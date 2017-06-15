@@ -1,3 +1,9 @@
+# 1.0.4 (2017-06-15)
+
+- Fixed bug with importing `jwt-decode`.
+
+- Added a display message for users to the window on failed login attempt instead of failing silently at an endless loading screen.
+
 # 1.0.3 (2017-06-08)
 
 - Fixed bug with auth check.
