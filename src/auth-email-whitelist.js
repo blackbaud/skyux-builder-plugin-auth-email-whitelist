@@ -9,7 +9,7 @@ const decode = require('jwt-decode');
 
 /* istanbul ignore next */
 (SkyAppBootstrapper as any).processBootstrapConfig = () => {
-  if (BBAuth.mock()) {
+  if (BBAuth.mock) {
     return Promise.resolve('Using mock');
   }
   return BBAuth
