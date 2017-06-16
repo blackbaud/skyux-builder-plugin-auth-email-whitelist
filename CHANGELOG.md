@@ -1,3 +1,7 @@
+# 1.0.5 (2017-06-16)
+
+- Added check for mocks to allow e2e tests to pass.
+
 # 1.0.4 (2017-06-15)
 
 - Fixed bug with importing `jwt-decode`.
