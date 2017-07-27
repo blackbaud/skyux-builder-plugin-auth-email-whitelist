@@ -1,3 +1,7 @@
+# 1.0.6 (2017-07-27)
+
+- Added more email domains.
+
 # 1.0.5 (2017-06-16)
 
 - Added check for mocks to allow e2e tests to pass.
