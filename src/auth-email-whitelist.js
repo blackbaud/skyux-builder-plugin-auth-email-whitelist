@@ -16,13 +16,16 @@ const decode = require('jwt-decode');
     .getToken()
     .then((token: string) => {
       const emailDomainWhitelist: string[] = [
+        'blackbaud.ca',
         'blackbaud.com',
         'blackbaud.me',
+        'blackbaud.com.au',
         'blackbaud.co.uk',
         'blackbaud.au',
         'microedge.com',
         'attentive.ly',
-        'everydayhero.com'
+        'everydayhero.com',
+        'smarttuition.com'
       ];
       const parsedToken = decode(token);
       const domain = parsedToken.email.split('@')[1];
