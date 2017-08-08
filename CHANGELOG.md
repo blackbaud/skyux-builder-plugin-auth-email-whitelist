@@ -1,3 +1,7 @@
+# 1.0.7 (2017-08-08)
+
+- Case insensitive domains.
+
 # 1.0.6 (2017-07-27)
 
 - Added more email domains.
