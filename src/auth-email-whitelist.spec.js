@@ -40,7 +40,7 @@ describe('Auth Email Whitelist plugin', () => {
     skyAppConfig.skyux.auth = true;
     result = plugin.preload(content, path, skyAppConfig);
     expect(result).not.toBe(content);
-  })
+  });
 
   it('should add content to the end of the app-extras.module.ts file', () => {
     let content = '';

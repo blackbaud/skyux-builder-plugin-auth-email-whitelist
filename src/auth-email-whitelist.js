@@ -24,7 +24,7 @@ const decode = require('jwt-decode');
       const parsedToken = decode(token);
       const domain = parsedToken.email.split('@')[1];
 
-      if (emailDomainWhitelist.indexOf(domain) > -1) {
+      if (emailDomainWhitelist.indexOf(domain.toLowerCase()) > -1) {
         return Promise.resolve(true);
       }
 
