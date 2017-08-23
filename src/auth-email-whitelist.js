@@ -16,8 +16,7 @@ const decode = require('jwt-decode');
     .getToken()
     .then((token: string) => {
       const parsedToken = decode(token);
-
-      if (parsedToken.1bb.perms === 1 || parsedToken.1bb.perms.indexOf(1) > -1) {
+      if (parsedToken['1bb.perms'] === 1 || parsedToken['1bb.perms'].indexOf(1) > -1) {
         return Promise.resolve(true);
       }
 
