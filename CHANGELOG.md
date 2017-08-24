@@ -1,3 +1,6 @@
+# 1.0.8 (2017-08-24)
+- Converted to use the new 1bb.perms check.
+
 # 1.0.7 (2017-08-08)
 
 - Case insensitive domains.

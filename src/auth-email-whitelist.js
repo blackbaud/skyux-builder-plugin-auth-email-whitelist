@@ -15,22 +15,13 @@ const decode = require('jwt-decode');
   return BBAuth
     .getToken()
     .then((token: string) => {
-      const emailDomainWhitelist: string[] = [
-        'blackbaud.ca',
-        'blackbaud.com',
-        'blackbaud.me',
-        'blackbaud.com.au',
-        'blackbaud.co.uk',
-        'blackbaud.au',
-        'microedge.com',
-        'attentive.ly',
-        'everydayhero.com',
-        'smarttuition.com'
-      ];
       const parsedToken = decode(token);
-      const domain = parsedToken.email.split('@')[1];
 
-      if (emailDomainWhitelist.indexOf(domain.toLowerCase()) > -1) {
+      if (typeof parsedToken['1bb.perms'] === 'number') {
+        parsedToken['1bb.perms'] = [parsedToken['1bb.perms']];
+      }
+
+      if (parsedToken['1bb.perms'].indexOf(1) > -1) {
         return Promise.resolve(true);
       }
 
