@@ -15,14 +15,16 @@ const decode = require('jwt-decode');
   return BBAuth
     .getToken()
     .then((token: string) => {
-      const parsedToken = decode(token);
+      const permissions = decode(token)['1bb.perms'];
 
-      if (typeof parsedToken['1bb.perms'] === 'number') {
-        parsedToken['1bb.perms'] = [parsedToken['1bb.perms']];
-      }
+      if (permissions) {
+        if (typeof permissions === 'number') {
+          permissions = [permissions];
+        }
 
-      if (parsedToken['1bb.perms'].indexOf(1) > -1) {
-        return Promise.resolve(true);
+        if (permissions.indexOf(1) > -1) {
+          return Promise.resolve(true);
+        }
       }
 
       const windowRef = new SkyAppWindowRef();
