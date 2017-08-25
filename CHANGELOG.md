@@ -1,3 +1,6 @@
+# 1.0.9 (2017-08-25)
+- Added check for existence of 1bb.perms key.
+
 # 1.0.8 (2017-08-24)
 - Converted to use the new 1bb.perms check.
 
