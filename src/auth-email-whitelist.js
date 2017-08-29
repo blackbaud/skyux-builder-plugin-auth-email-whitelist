@@ -15,7 +15,7 @@ const decode = require('jwt-decode');
   return BBAuth
     .getToken()
     .then((token: string) => {
-      const permissions = decode(token)['1bb.perms'];
+      let permissions = decode(token)['1bb.perms'];
 
       if (permissions) {
         if (typeof permissions === 'number') {
