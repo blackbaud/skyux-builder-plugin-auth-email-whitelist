@@ -1,3 +1,6 @@
+# 1.0.9 (2017-08-29)
+- Changed const to let for permissions check.
+
 # 1.0.9 (2017-08-25)
 - Added check for existence of 1bb.perms key.
 
