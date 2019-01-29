@@ -1,3 +1,6 @@
+# 2.0.0 (2019-01-28)
+- Updated imports to pull from SKY UX 3 libraries.
+
 # 1.0.10 (2017-08-29)
 - Changed const to let for permissions check.
 

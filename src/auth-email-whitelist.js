@@ -3,8 +3,18 @@ const preload = (content, resourcePath, skyAppConfig) => {
   if (resourcePath.match(/app-extras\.module\.ts$/) && authEnabled) {
     return `${content}
 /* tslint:disable:max-line-length */
-import { BBAuth } from '@blackbaud/auth-client';
-import { SkyAppBootstrapper, SkyAppWindowRef } from '@blackbaud/skyux-builder/runtime';
+import {
+  BBAuth
+} from '@blackbaud/auth-client';
+
+import {
+  SkyAppWindowRef
+} from '@skyux/core';
+
+import {
+  SkyAppBootstrapper
+} from '@skyux-sdk/builder/runtime';
+
 const decode = require('jwt-decode');
 
 /* istanbul ignore next */
