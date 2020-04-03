@@ -1,13 +1,21 @@
+# 2.0.0 (2020-04-04)
+
+- Updated `devDependencies` to the latest versions. [#26](https://github.com/blackbaud/skyux-builder-plugin-auth-email-whitelist/pull/26)
+
 # 2.0.0 (2019-01-28)
+
 - Updated imports to pull from SKY UX 3 libraries.
 
 # 1.0.10 (2017-08-29)
+
 - Changed const to let for permissions check.
 
 # 1.0.9 (2017-08-25)
+
 - Added check for existence of 1bb.perms key.
 
 # 1.0.8 (2017-08-24)
+
 - Converted to use the new 1bb.perms check.
 
 # 1.0.7 (2017-08-08)
