@@ -1,4 +1,4 @@
-# 2.0.0 (2020-04-04)
+# 2.0.1 (2020-04-04)
 
 - Updated `devDependencies` to the latest versions. [#26](https://github.com/blackbaud/skyux-builder-plugin-auth-email-whitelist/pull/26)
 
